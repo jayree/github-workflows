@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       - run: |
           yarn add ${{ github.repository }}#${{ github.sha }} --network-concurrency 1
           yarn pack:tarballs -t linux-x64 --no-xz

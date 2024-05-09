@@ -39,7 +39,7 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@41775cf0c82ef066f1eb39cea1bd74697ca5b735
       - run: brew install makensis
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       - run: yarn pack:win
       - run: yarn upload:win
       - run: yarn channel:promote --cli ${{ inputs.cli }} --version ${{ inputs.version }} --target ${{ inputs.channel }} --platform win

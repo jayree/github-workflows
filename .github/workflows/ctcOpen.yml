@@ -22,7 +22,7 @@ jobs:
       - run: npm install -g @salesforce/change-case-management --omit=dev
       - name: Open CTC case
         id: ctc
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: jayree/github-workflows/.github/actions/retry@jayree
         with:
           max_attempts: 5
           command: |

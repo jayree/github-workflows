@@ -31,10 +31,10 @@ jobs:
         with:
           node-version: ${{ inputs.nodeVersion }}
           cache: yarn
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       # todo: download the macos tarball and pass that to the oclif pack:macos command
       - name: pack:macos
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: jayree/github-workflows/.github/actions/retry@jayree
         with:
           command: yarn pack:macos
       - run: yarn upload:macos

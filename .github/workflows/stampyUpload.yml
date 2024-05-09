@@ -19,7 +19,7 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+      - uses: jayree/github-workflows/.github/actions/versionInfo@jayree
         id: version-info
         with:
           version: ${{inputs.version}}

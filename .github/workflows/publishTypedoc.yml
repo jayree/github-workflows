@@ -19,13 +19,13 @@ jobs:
         with:
           node-version: lts/*
           cache: yarn
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       - name: Get Github user info
         id: github-user-info
-        uses: salesforcecli/github-workflows/.github/actions/getGithubUserInfo@main
+        uses: jayree/github-workflows/.github/actions/getGithubUserInfo@jayree
         with:
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-      - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+      - uses: jayree/github-workflows/.github/actions/gitConfig@jayree
         with:
           username: ${{ steps.github-user-info.outputs.username }}
           email: ${{ steps.github-user-info.outputs.email }}

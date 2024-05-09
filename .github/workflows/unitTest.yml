@@ -3,6 +3,6 @@ on:
 
 jobs:
   linux-unit-tests:
-    uses: salesforcecli/github-workflows/.github/workflows/unitTestsLinux.yml@main
+    uses: jayree/github-workflows/.github/workflows/unitTestsLinux.yml@jayree
   windows-unit-tests:
-    uses: salesforcecli/github-workflows/.github/workflows/unitTestsWindows.yml@main
+    uses: jayree/github-workflows/.github/workflows/unitTestsWindows.yml@jayree

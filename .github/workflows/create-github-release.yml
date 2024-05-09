@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Get Github user info
         id: github-user-info
-        uses: salesforcecli/github-workflows/.github/actions/getGithubUserInfo@main
+        uses: jayree/github-workflows/.github/actions/getGithubUserInfo@jayree
         with:
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
 
@@ -37,7 +37,7 @@ jobs:
         with:
           token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
 
-      - uses: salesforcecli/github-workflows/.github/actions/getPreReleaseTag@main
+      - uses: jayree/github-workflows/.github/actions/getPreReleaseTag@jayree
         id: distTag
 
       - name: Validate prerelease
@@ -66,7 +66,7 @@ jobs:
 
       - name: Generate oclif readme
         if: ${{ inputs.generate-readme }}
-        uses: salesforcecli/github-workflows/.github/actions/generateOclifReadme@main
+        uses: jayree/github-workflows/.github/actions/generateOclifReadme@jayree
         with:
           skip-on-empty: ${{ inputs.skip-on-empty }}
           pre-release: ${{ steps.prereleaseTag.outputs.tag && 'true' || 'false' }}

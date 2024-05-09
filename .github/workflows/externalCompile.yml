@@ -66,13 +66,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.nodeVersion }}
-      - uses: salesforcecli/github-workflows/.github/actions/retry@main
+      - uses: jayree/github-workflows/.github/actions/retry@jayree
         name: git clone
         with:
           max_attempts: 20
           command: git clone -b ${{ inputs.branch}} --single-branch ${{ inputs.externalProjectGitUrl}} $(pwd)
           timeout_minutes: 20
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       - run: ${{inputs.preSwapCommands}}
       - name: swap this dependency for the version on this branch
         run: |

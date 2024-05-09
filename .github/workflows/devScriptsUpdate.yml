@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+      - uses: jayree/github-workflows/.github/actions/versionInfo@jayree
         id: version-info
         with:
           version: latest
@@ -42,11 +42,11 @@ jobs:
 
       - name: Get Github user info
         id: github-user-info
-        uses: salesforcecli/github-workflows/.github/actions/getGithubUserInfo@main
+        uses: jayree/github-workflows/.github/actions/getGithubUserInfo@jayree
         with:
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
 
-      - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+      - uses: jayree/github-workflows/.github/actions/gitConfig@jayree
         with:
           username: ${{ steps.github-user-info.outputs.username }}
           email: ${{ steps.github-user-info.outputs.email }}
@@ -82,7 +82,7 @@ jobs:
           git commit -m 'chore: updates from devScripts' --no-verify
           git push origin --no-verify
       # sometimes pr can't create immediately
-      - uses: salesforcecli/github-workflows/.github/actions/retry@main
+      - uses: jayree/github-workflows/.github/actions/retry@jayree
         with:
           max_attempts: 5
           command: |

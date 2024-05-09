@@ -38,9 +38,9 @@ jobs:
         with:
           node-version: ${{ inputs.nodeVersion }}
           cache: yarn
-      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - uses: jayree/github-workflows/.github/actions/yarnInstallWithRetries@jayree
       - name: pack tarballs
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: jayree/github-workflows/.github/actions/retry@jayree
         with:
           command: yarn pack:tarballs
           retry_on: error
